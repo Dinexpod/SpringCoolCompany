@@ -22,9 +22,9 @@ public class Customer {
     private Long customerId;
     private String customerName;
     private int customerAge;
-    private Set<Project> customerProjects;
+//    private Set<Project> customerProjects;
 
-    public void addProject(Project project) {
-        customerProjects.add(project);
-    }
+//    public void addProject(Project project) {
+//        customerProjects.add(project);
+//    }
 }

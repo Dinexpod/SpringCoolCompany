@@ -22,13 +22,13 @@ public class DeveloperController {
     @RequestMapping(method = RequestMethod.GET)
     public String developer() {
         System.out.println("controller: DEVELOPER");
-        developerService.create();
-        return "/developer/developer";
+//        developerService.create();
+        return "developer/developer";
     }
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String developerInfo() {
-        System.out.println("controller: INFO");
+        System.out.println("controller: DEVELOPER INFO");
         developerService.create();
         return "developer/info";
     }
@@ -42,7 +42,7 @@ public class DeveloperController {
 
     @PostConstruct
     public void postConstruct() {
+        System.out.println("DEVELOPER CONTROLLER is OK!");
         System.out.println("=============================================");
-        System.out.println("DeveloperController is done");
     }
 }

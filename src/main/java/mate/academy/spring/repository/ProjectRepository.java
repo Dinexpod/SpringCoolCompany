@@ -1,4 +1,9 @@
 package mate.academy.spring.repository;
 
-public interface ProjectRepository {
+import mate.academy.spring.model.Project;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ProjectRepository extends JpaRepository<Project, Long> {
 }

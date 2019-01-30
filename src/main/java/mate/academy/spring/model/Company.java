@@ -22,11 +22,11 @@ public class Company {
     private Long companyId;
     private String companyName;
     private Type companyType;
-    private Set<Project> companyProjects;
+//    private Set<Project> companyProjects;
 
-    public void addProject(Project project) {
-        companyProjects.add(project);
-    }
+//    public void addProject(Project project) {
+//        companyProjects.add(project);
+//    }
 
     public enum Type {
         INSOURCE,

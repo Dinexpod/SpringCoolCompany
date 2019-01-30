@@ -13,6 +13,7 @@ public class DeveloperServiceImpl implements DeveloperService {
     @Autowired
     private DeveloperRepository developerRepository;
 
+    @Override
     public void create() {
         Developer developer = new Developer();
         developer.setDeveloperName("Din");
@@ -21,6 +22,7 @@ public class DeveloperServiceImpl implements DeveloperService {
         developerRepository.save(developer);
     }
 
+    @Override
     public Developer getDeveloper(Long id) {
         return null;
     }
