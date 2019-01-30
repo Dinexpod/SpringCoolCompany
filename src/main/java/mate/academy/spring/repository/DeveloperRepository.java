@@ -6,4 +6,5 @@ import mate.academy.spring.model.Developer;
 
 @Repository
 public interface DeveloperRepository extends JpaRepository<Developer, Long> {
+
 }

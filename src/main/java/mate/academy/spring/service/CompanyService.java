@@ -5,5 +5,6 @@ import mate.academy.spring.model.Developer;
 
 public interface CompanyService {
     void create();
+
     Company getCompany(Long id);
 }

@@ -18,8 +18,10 @@ public class SkillServiceImpl implements SkillService {
     @Override
     public void create() {
         Skill skill = new Skill();
+
         skill.setSkillDegree(Skill.Degree.MIDDLE);
         skill.setSkillName(Skill.Name.JAVA);
+
         skillRepository.save(skill);
     }
 

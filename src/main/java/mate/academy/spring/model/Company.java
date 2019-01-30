@@ -28,7 +28,7 @@ public class Company {
 //    }
 
     public enum Type {
-        INSOURCE,
-        OUTSOURCE
+        OUTSOURCE,
+        INSOURCE
     }
 }

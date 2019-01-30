@@ -29,7 +29,6 @@ public class ProjectController {
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String projectInfo() {
         System.out.println("controller: PROJECT INFO");
-        projectService.create();
         return "project/info";
     }
 
