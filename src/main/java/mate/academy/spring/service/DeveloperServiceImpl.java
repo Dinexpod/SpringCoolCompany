@@ -27,17 +27,15 @@ public class DeveloperServiceImpl implements DeveloperService {
     }
 
     @Override
+    public Developer create(Developer developer) {
+        return developerRepository.save(developer);
+    }
+
+    @Override
     @Transactional(readOnly = true)
-    public Developer getDeveloper(Long id) {
+    public DeveloperDto getDeveloper(Long id) {
         Developer developer = developerRepository.getOne(id);
-        DeveloperDto devDto = new DeveloperDto();
-
-        devDto.setDeveloperId(developer.getDeveloperId());
-        devDto.setDeveloperAge(developer.getDeveloperAge());
-        devDto.setDeveloperName(developer.getDeveloperName());
-        devDto.setDeveloperSalary(developer.getDeveloperSalary());
-
-        return developer;
+        return DeveloperDto.doDtoDev(developer);
 }
 
     @PostConstruct

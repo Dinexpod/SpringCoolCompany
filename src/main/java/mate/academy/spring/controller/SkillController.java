@@ -22,7 +22,7 @@ public class SkillController {
     @RequestMapping(method = RequestMethod.GET)
     public String skill() {
         System.out.println("controller: SKILL");
-        skillService.create();
+//        skillService.create();
         return "skill/skill";
     }
 

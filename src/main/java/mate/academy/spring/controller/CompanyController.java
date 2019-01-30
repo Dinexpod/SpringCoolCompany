@@ -22,7 +22,7 @@ public class CompanyController {
     @RequestMapping(method = RequestMethod.GET)
     public String company() {
         System.out.println("controller: COMPANY");
-        companyService.create();
+//        companyService.create();
         return "company/company";
     }
 

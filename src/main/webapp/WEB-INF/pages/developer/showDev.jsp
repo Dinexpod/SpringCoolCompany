@@ -1,10 +1,20 @@
 <%--@elvariable id="developer" type="mate.academy.spring.model.Developer"--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: Dinexpod
+  Date: 30.01.2019
+  Time: 17:59
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Device info</title>
+    <title>ShowDev</title>
 </head>
 <body>
+<h1>
+    Developer submit!
+</h1>
 <h2>
     <table>
         <tr>
