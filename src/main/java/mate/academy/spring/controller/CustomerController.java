@@ -22,7 +22,7 @@ public class CustomerController {
     @RequestMapping(method = RequestMethod.GET)
     public String customer() {
         System.out.println("controller: CUSTOMER");
-        customerService.create();
+//        customerService.create();
         return "customer/customer";
     }
 
