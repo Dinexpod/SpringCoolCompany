@@ -31,7 +31,7 @@ public class DeveloperServiceImpl implements DeveloperService {
 
     @PostConstruct
     public void postConstruct() {
-        System.out.println("DeveloperServiceImpl is done");
+        System.out.println("DeveloperServiceImpl is OK!");
         System.out.println("=============================================");
     }
 }
