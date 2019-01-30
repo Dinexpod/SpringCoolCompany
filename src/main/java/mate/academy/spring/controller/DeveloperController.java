@@ -1,8 +1,11 @@
 package mate.academy.spring.controller;
 
+import mate.academy.spring.model.Developer;
 import mate.academy.spring.service.DeveloperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -32,12 +35,12 @@ public class DeveloperController {
         return "developer/info";
     }
 
-//    @RequestMapping(value = "/developer/{developerId}", method = RequestMethod.GET)
-//    public String getDeveloperInfo(@PathVariable Long developerId, ModelMap view) {
-//        Developer developer = developerService.getDeveloper(developerId);
-//        view.put("developer", developer);
-//        return "developer/info";
-//    }
+    @RequestMapping(value = "/{developerId}", method = RequestMethod.GET)
+    public String getDeveloperInfo(@PathVariable Long developerId, ModelMap view) {
+        Developer developer = developerService.getDeveloper(developerId);
+        view.put("developer", developer);
+        return "developer/info";
+    }
 
     @PostConstruct
     public void postConstruct() {
