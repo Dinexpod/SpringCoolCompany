@@ -10,12 +10,6 @@ import javax.annotation.PostConstruct;
 @Component("developerService")
 public class DeveloperServiceImpl implements DeveloperService {
 
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("DeveloperServiceImpl is done");
-        System.out.println("=============================================");
-    }
-
     @Autowired
     private DeveloperRepository developerRepository;
 
@@ -31,4 +25,9 @@ public class DeveloperServiceImpl implements DeveloperService {
         return null;
     }
 
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("DeveloperServiceImpl is done");
+        System.out.println("=============================================");
+    }
 }
