@@ -13,6 +13,6 @@
   </head>
   <body>
   I'm in webapp
-  And Developer name is ${developer.name}
+  And Developer name is ${developer.developerName}
   </body>
 </html>

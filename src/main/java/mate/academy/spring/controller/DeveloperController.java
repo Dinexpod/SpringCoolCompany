@@ -29,7 +29,6 @@ public class DeveloperController {
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String developerInfo() {
         System.out.println("controller: DEVELOPER INFO");
-        developerService.create();
         return "developer/info";
     }
 

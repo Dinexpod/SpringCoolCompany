@@ -18,8 +18,10 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public void create() {
         Company company = new Company();
+
         company.setCompanyName("Varteq");
         company.setCompanyType(Company.Type.OUTSOURCE);
+
         companyRepository.save(company);
     }
 

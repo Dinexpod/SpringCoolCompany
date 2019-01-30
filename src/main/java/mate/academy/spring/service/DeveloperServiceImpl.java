@@ -16,9 +16,11 @@ public class DeveloperServiceImpl implements DeveloperService {
     @Override
     public void create() {
         Developer developer = new Developer();
+
         developer.setDeveloperName("Din");
         developer.setDeveloperSalary(234234);
         developer.setDeveloperAge(22);
+
         developerRepository.save(developer);
     }
 

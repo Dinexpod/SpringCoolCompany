@@ -18,8 +18,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void create() {
         Customer customer = new Customer();
+
         customer.setCustomerName("Sem");
         customer.setCustomerAge(23);
+
         customerRepository.save(customer);
     }
 

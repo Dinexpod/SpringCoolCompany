@@ -25,8 +25,8 @@ public class Skill {
     public enum Name {
         JAVA,
         RUBY,
-        JS,
-        PHYTON
+        PHYTON,
+        JS
     }
 
     public enum Degree {

@@ -12,15 +12,15 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @ComponentScan(basePackages = "mate.academy.spring")
 public class HelloWorldConfiguration {
-	
-	@Bean(name="HelloWorld")
-	public ViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setViewClass(JstlView.class);
-		viewResolver.setPrefix("/WEB-INF/pages/");
-		viewResolver.setSuffix(".jsp");
 
-		return viewResolver;
-	}
+    @Bean(name = "HelloWorld")
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(JstlView.class);
+        viewResolver.setPrefix("/WEB-INF/pages/");
+        viewResolver.setSuffix(".jsp");
+
+        return viewResolver;
+    }
 
 }

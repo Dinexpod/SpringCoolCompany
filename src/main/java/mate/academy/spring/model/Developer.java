@@ -19,7 +19,7 @@ public class Developer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long developerId;
+    private String developerName;
     private Integer developerAge;
     private Integer developerSalary;
-    private String developerName;
 }

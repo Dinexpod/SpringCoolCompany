@@ -19,7 +19,6 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public void create() {
         Project project = new Project();
-        Developer developer = new Developer();
 
         project.setProjectName("Project 1");
         project.setProjectCost(234);

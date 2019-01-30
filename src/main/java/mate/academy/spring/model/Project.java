@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Data
@@ -31,5 +29,4 @@ public class Project {
 //    public void addDeveloper(Developer developer) {
 //        projectDevelopers.add(developer);
 //    }
-
 }
