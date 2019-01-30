@@ -35,7 +35,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @PostConstruct
     public void postConstruct() {
-        System.out.println("ProjectServiceImpl is done");
+        System.out.println("ProjectServiceImpl is OK!");
         System.out.println("=============================================");
     }
 }

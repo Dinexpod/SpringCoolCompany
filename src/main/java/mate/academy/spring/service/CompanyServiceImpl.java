@@ -5,6 +5,8 @@ import mate.academy.spring.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component("companyService")
 public class CompanyServiceImpl implements CompanyService {
 
@@ -28,5 +30,11 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Company getCompany(Long id) {
         return null;
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("CompanyServiceImpl is OK!");
+        System.out.println("=============================================");
     }
 }

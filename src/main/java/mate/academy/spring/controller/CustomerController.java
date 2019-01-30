@@ -1,6 +1,6 @@
 package mate.academy.spring.controller;
 
-import mate.academy.spring.service.DeveloperService;
+import mate.academy.spring.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,27 +9,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.annotation.PostConstruct;
 
 @Controller
-@RequestMapping("/developer")
-public class DeveloperController {
+@RequestMapping("/customer")
+public class CustomerController {
 
-    private final DeveloperService developerService;
+    private final CustomerService customerService;
 
     @Autowired
-    public DeveloperController(DeveloperService developerService) {
-        this.developerService = developerService;
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String developer() {
-        System.out.println("controller: DEVELOPER");
-        developerService.create();
-        return "developer/developer";
+    public String customer() {
+        System.out.println("controller: CUSTOMER");
+        customerService.create();
+        return "customer/customer";
     }
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
-    public String developerInfo() {
-        System.out.println("controller: DEVELOPER INFO");
-        return "developer/info";
+    public String customerInfo() {
+        System.out.println("controller: CUSTOMER INFO");
+        return "customer/info";
     }
 
 //    @RequestMapping(value = "/developer/{developerId}", method = RequestMethod.GET)
@@ -41,7 +41,7 @@ public class DeveloperController {
 
     @PostConstruct
     public void postConstruct() {
-        System.out.println("DEVELOPER CONTROLLER is OK!");
+        System.out.println("CUSTOMER CONTROLLER is OK!");
         System.out.println("=============================================");
     }
 }

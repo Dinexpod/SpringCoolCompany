@@ -5,6 +5,8 @@ import mate.academy.spring.repository.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component("skillService")
 public class SkillServiceImpl implements SkillService {
 
@@ -28,5 +30,11 @@ public class SkillServiceImpl implements SkillService {
     @Override
     public Skill getSkill(Long id) {
         return null;
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("SkillServiceImpl is OK!");
+        System.out.println("=============================================");
     }
 }

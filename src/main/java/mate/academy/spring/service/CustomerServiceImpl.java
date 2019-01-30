@@ -5,6 +5,8 @@ import mate.academy.spring.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
@@ -28,5 +30,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer getCustomer(Long id) {
         return null;
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("CustomerServiceImpl is OK!");
+        System.out.println("=============================================");
     }
 }
