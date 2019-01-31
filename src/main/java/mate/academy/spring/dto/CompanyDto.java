@@ -12,11 +12,6 @@ public class CompanyDto {
     private Long companyId;
     private String companyName;
     private Company.Type companyType;
-//    private Set<Project> companyProjects;
-
-//    public void addProject(Project project) {
-//        companyProjects.add(project);
-//    }
 
     public enum Type {
         OUTSOURCE,

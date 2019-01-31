@@ -5,10 +5,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -21,11 +27,10 @@ public class Company {
     private Long companyId;
     private String companyName;
     private Type companyType;
-//    private Set<Project> companyProjects;
 
-//    public void addProject(Project project) {
-//        companyProjects.add(project);
-//    }
+    @ManyToMany
+    @JoinTable(name="company_project")
+    private Set<Project> companyProjects = new HashSet<>();
 
     public enum Type {
         OUTSOURCE,

@@ -5,11 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -24,9 +28,13 @@ public class Project {
     private String projectType;
     private double projectCost;
     private LocalDateTime projectDate;
-//    private Set<Developer> projectDevelopers;
 
-//    public void addDeveloper(Developer developer) {
-//        projectDevelopers.add(developer);
-//    }
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "developerProjects")
+    private Set<Developer> projectDevelopers = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "companyProjects")
+    private Set<Company> projectCompanies = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "customerProjects")
+    private Set<Customer> projectCustomers = new HashSet<>();
 }

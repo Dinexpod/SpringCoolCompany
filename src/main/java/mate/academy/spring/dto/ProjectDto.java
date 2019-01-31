@@ -15,9 +15,4 @@ public class ProjectDto {
     private String projectType;
     private double projectCost;
     private LocalDateTime projectDate;
-//    private Set<Developer> projectDevelopers;
-
-//    public void addDeveloper(Developer developer) {
-//        projectDevelopers.add(developer);
-//    }
 }
