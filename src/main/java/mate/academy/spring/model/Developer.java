@@ -8,7 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -22,4 +26,12 @@ public class Developer {
     private String developerName;
     private Integer developerAge;
     private Integer developerSalary;
+
+    @ManyToMany
+    @JoinTable(name="developer_project")
+    private Set<Project> developerProjects = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(name="developer_skill")
+    private Set<Skill> developerSkills = new HashSet<>();
 }

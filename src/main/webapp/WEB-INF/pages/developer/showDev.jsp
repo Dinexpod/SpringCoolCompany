@@ -18,15 +18,15 @@
 <h2>
     <table>
         <tr>
-            <td>Name :</td>
+            <td>Name:</td>
             <td>${developer.developerName}</td>
         </tr>
         <tr>
-            <td>Age :</td>
+            <td>Age:</td>
             <td>${developer.developerAge}</td>
         </tr>
         <tr>
-            <td>Salary :</td>
+            <td>Salary:</td>
             <td>${developer.developerSalary}</td>
         </tr>
     </table>

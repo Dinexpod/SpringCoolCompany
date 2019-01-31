@@ -8,7 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -21,9 +25,8 @@ public class Customer {
     private Long customerId;
     private String customerName;
     private int customerAge;
-//    private Set<Project> customerProjects;
 
-//    public void addProject(Project project) {
-//        customerProjects.add(project);
-//    }
+    @ManyToMany
+    @JoinTable(name="customer_project")
+    private Set<Project> customerProjects = new HashSet<>();
 }

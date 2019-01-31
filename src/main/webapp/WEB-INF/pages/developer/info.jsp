@@ -8,7 +8,7 @@
 <h2>
     <table>
         <tr>
-            <td>Name :</td>
+            <td>Name:</td>
             <td>${developer.developerName}</td>
         </tr>
         <tr>
