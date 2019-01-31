@@ -5,6 +5,9 @@
     <title>Device info</title>
 </head>
 <body>
+
+<button type="button" name="back" onclick="history.back()">back</button>
+
 <h2>
     <table>
         <tr>

@@ -17,6 +17,9 @@
 </h1>
 <form:form method="POST"
            action="/TheBestSpringProject_war_exploded/developer/addDev" modelAttribute="developer">
+
+    <button type="button" name="back" onclick="history.back()">back</button>
+
     <table>
         <tr>
             <td><form:label path="developerName">Name</form:label></td>

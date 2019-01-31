@@ -13,6 +13,9 @@
 </head>
 <body>
 Developer page:
+
+<button type="button" name="back" onclick="history.back()">back</button>
+
 <a href="${pageContext.request.contextPath}/developer/newDev/">
     <button type="submit" name="button" value="button1">Create developer</button>
 </a>
