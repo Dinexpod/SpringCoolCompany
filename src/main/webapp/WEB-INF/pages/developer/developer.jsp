@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Dinexpod
@@ -11,6 +12,10 @@
     <title>Developer</title>
 </head>
 <body>
-Hello I'm DEVELOPER!!!
+Developer page:
+<a href="${pageContext.request.contextPath}/developer/newDev/">
+    <button type="submit" name="button" value="button1">Create developer</button>
+</a>
+
 </body>
 </html>

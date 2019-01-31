@@ -12,7 +12,8 @@
     <title>$Title$</title>
   </head>
   <body>
-  I'm in webapp
-  And Developer name is ${developer.developerName}
+  <a href="${pageContext.request.contextPath}/developer/">
+    <button type="submit" name="button" value="button1">Go to Developer page</button>
+  </a>
   </body>
 </html>
