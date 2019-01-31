@@ -1,5 +1,6 @@
 package mate.academy.spring.controller;
 
+import lombok.extern.log4j.Log4j;
 import mate.academy.spring.dto.DeveloperDto;
 import mate.academy.spring.model.Developer;
 import mate.academy.spring.service.DeveloperService;
@@ -12,7 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
+import java.util.stream.Collectors;
 
+@Log4j
 @Controller
 @RequestMapping("/developer")
 public class DeveloperController {
@@ -62,6 +66,25 @@ public class DeveloperController {
 
         model.put("developer", developerDto);
         return "developer/showDev";
+    }
+
+    @RequestMapping(value = "/listDev", method = RequestMethod.GET)
+    public String listDeveloper(ModelMap model) {
+        System.out.println("controller: DEVELOPER LIST");
+
+        List<DeveloperDto> developers = developerService.getAll()
+                .stream()
+                .map(DeveloperDto::doDtoDev)
+                .collect(Collectors.toList());
+
+        model.put("developers", developers);
+        return "developer/listDeveloper";
+    }
+
+    @RequestMapping(value = "/jqueryDev", method = RequestMethod.GET)
+    public String index() {
+
+        return "developer/jqueryDev";
     }
 
     @PostConstruct

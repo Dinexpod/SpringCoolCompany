@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @Component("developerService")
 public class DeveloperServiceImpl implements DeveloperService {
@@ -37,6 +38,11 @@ public class DeveloperServiceImpl implements DeveloperService {
         Developer developer = developerRepository.getOne(id);
         return DeveloperDto.doDtoDev(developer);
 }
+
+    @Override
+    public List<Developer> getAll() {
+        return developerRepository.findAll();
+    }
 
     @PostConstruct
     public void postConstruct() {
