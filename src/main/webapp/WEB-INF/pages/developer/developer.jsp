@@ -12,13 +12,24 @@
     <title>Developer</title>
 </head>
 <body>
-Developer page:
+<h1>Developer page</h1>
 
-<button type="button" name="back" onclick="history.back()">back</button>
+<table>
+    <tr>
+        <button type="button" name="back" onclick="history.back()">back</button>
+    </tr>
+    <tr>
+        <a href="${pageContext.request.contextPath}/developer/listDev/">
+            <button type="submit" name="button" value="button1">List developer</button>
+        </a>
+    </tr>
+    <tr>
+        <a href="${pageContext.request.contextPath}/developer/newDev/">
+            <button type="submit" name="button" value="button1">Create developer</button>
+        </a>
+    </tr>
 
-<a href="${pageContext.request.contextPath}/developer/newDev/">
-    <button type="submit" name="button" value="button1">Create developer</button>
-</a>
+</table>
 
 </body>
 </html>
