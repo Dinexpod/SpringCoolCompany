@@ -2,8 +2,6 @@ package mate.academy.spring.controller;
 
 import lombok.extern.log4j.Log4j;
 import mate.academy.spring.dto.DeveloperDto;
-import mate.academy.spring.dto.UserLoginInput;
-import mate.academy.spring.dto.UserRegistrationInput;
 import mate.academy.spring.model.Developer;
 import mate.academy.spring.service.DeveloperService;
 import org.springframework.beans.factory.annotation.Autowired;
