@@ -46,8 +46,8 @@
             <td>
                 <a href="${pageContext.request.contextPath}/developer/delete/{developerId}">
                     <form method="POST"
-                               action="${pageContext.request.contextPath}/developer/delete/${developer.developerId}">
-                        <%--<button type="submit" name="delete" value="delete">delete</button>--%>
+                          action="${pageContext.request.contextPath}/developer/delete/${developer.developerId}">
+                            <%--<button type="submit" name="delete" value="delete">delete</button>--%>
                         <input type="submit" value="delete">
                     </form>
                 </a>
@@ -57,26 +57,26 @@
 </table>
 
 <%--<script>--%>
-    <%--//delete--%>
-    <%--$(".deleteForm").submit(function (event) {--%>
-        <%--event.preventDefault();--%>
-        <%--var form = $(this);--%>
-        <%--var id = form.find('button[name="delete"]').val();--%>
-        <%--var url = '/developer/' + id;--%>
-        <%--var line = form.parent('td').parent('tr');--%>
-        <%--$.ajax({--%>
-            <%--type: 'DELETE',--%>
-            <%--url: url,--%>
-            <%--contentType: 'application/x-www-form-urlencoded',--%>
-            <%--data: "id=" + id,--%>
-            <%--success: function () {--%>
-                <%--line.remove();--%>
-            <%--},--%>
-            <%--error: function (xhr, status, error) {--%>
-                <%--alert(error);--%>
-            <%--}--%>
-        <%--});--%>
-    <%--});--%>
+<%--//delete--%>
+<%--$(".deleteForm").submit(function (event) {--%>
+<%--event.preventDefault();--%>
+<%--var form = $(this);--%>
+<%--var id = form.find('button[name="delete"]').val();--%>
+<%--var url = '/developer/' + id;--%>
+<%--var line = form.parent('td').parent('tr');--%>
+<%--$.ajax({--%>
+<%--type: 'DELETE',--%>
+<%--url: url,--%>
+<%--contentType: 'application/x-www-form-urlencoded',--%>
+<%--data: "id=" + id,--%>
+<%--success: function () {--%>
+<%--line.remove();--%>
+<%--},--%>
+<%--error: function (xhr, status, error) {--%>
+<%--alert(error);--%>
+<%--}--%>
+<%--});--%>
+<%--});--%>
 <%--</script>--%>
 
 </body>

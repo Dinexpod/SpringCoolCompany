@@ -20,14 +20,13 @@
     <h1>Developer page</h1>
     <table>
 
-            <a href="${pageContext.request.contextPath}/developer/listDev/">
-                <input type="submit" value="List developer">
-            </a>
+        <a href="${pageContext.request.contextPath}/developer/listDev/">
+            <input type="submit" value="List developer">
+        </a>
 
         <a href="${pageContext.request.contextPath}/developer/newDev/">
             <input type="submit" value="Create developer">
         </a>
-
 
         <a href="${pageContext.request.contextPath}/developer/jqueryDev/">
             <input type="submit" value="JqueryDev">

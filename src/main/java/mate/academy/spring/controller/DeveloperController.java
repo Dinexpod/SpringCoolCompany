@@ -3,6 +3,7 @@ package mate.academy.spring.controller;
 import lombok.extern.log4j.Log4j;
 import mate.academy.spring.dto.DeveloperDto;
 import mate.academy.spring.dto.UserLoginInput;
+import mate.academy.spring.dto.UserRegistrationInput;
 import mate.academy.spring.model.Developer;
 import mate.academy.spring.service.DeveloperService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +68,7 @@ public class DeveloperController {
 
     @RequestMapping(value = "/addDev", method = RequestMethod.POST)
     public String putDeveloper(DeveloperDto devDto, ModelMap model) {
-        Developer dev = new  Developer();
+        Developer dev = new Developer();
 
         dev.setDeveloperAge(devDto.getDeveloperAge());
         dev.setDeveloperSalary(devDto.getDeveloperSalary());
@@ -97,20 +98,6 @@ public class DeveloperController {
     public String jQueryDev() {
 
         return "developer/jqueryDev";
-    }
-
-    @RequestMapping(value = "/reg", method = RequestMethod.GET)
-    public String reg() {
-
-        return "auth/reg";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(UserLoginInput user) {
-        System.out.println("LOGIIIIIIIIIIIIIIIIIIIIN");
-        System.out.println(user.getPassword());
-        System.out.println(user.getUsername());
-        return "redirect:/developer/index";
     }
 
     @PostConstruct
