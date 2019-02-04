@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Log4j
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
@@ -18,10 +17,10 @@ public class AuthController {
         return "auth/reg";
     }
 
-    @RequestMapping(value = "/reg", method = RequestMethod.GET)
+    @RequestMapping(value = "/log", method = RequestMethod.GET)
     public String showAuth() {
 
-        return "auth/reg";
+        return "developer/index1";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -33,13 +32,13 @@ public class AuthController {
     }
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
-    public String login(UserRegistrationInput user) {
+    public String login(UserRegistrationInput userAuth) {
         System.out.println("AUTHOOOOOOOOOOORIZATION");
-        System.out.println(user.getPassword());
-        System.out.println(user.getUsername());
-        System.out.println(user.getEmail());
-        System.out.println(user.getLastName());
-        System.out.println(user.getName());
+        System.out.println(userAuth.getPassword());
+        System.out.println(userAuth.getUsername());
+        System.out.println(userAuth.getEmail());
+        System.out.println(userAuth.getLastName());
+        System.out.println(userAuth.getName());
         return "redirect:/developer/index";
     }
 }
