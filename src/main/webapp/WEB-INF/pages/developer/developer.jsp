@@ -9,27 +9,31 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link type="text/css" rel="stylesheet" media="screen"
+          href="${pageContext.request.contextPath}/resources/styles/style1.css"/>
     <title>Developer</title>
 </head>
-<body>
-<h1>Developer page</h1>
+<button type="button" name="back" onclick="history.back()">back</button>
+<div id=login>
 
-<table>
-    <tr>
-        <button type="button" name="back" onclick="history.back()">back</button>
-    </tr>
-    <tr>
-        <a href="${pageContext.request.contextPath}/developer/listDev/">
-            <button type="submit" name="button" value="button1">List developer</button>
-        </a>
-    </tr>
-    <tr>
+    <body>
+    <h1>Developer page</h1>
+    <table>
+
+            <a href="${pageContext.request.contextPath}/developer/listDev/">
+                <input type="submit" value="List developer">
+            </a>
+
         <a href="${pageContext.request.contextPath}/developer/newDev/">
-            <button type="submit" name="button" value="button1">Create developer</button>
+            <input type="submit" value="Create developer">
         </a>
-    </tr>
 
-</table>
 
-</body>
+        <a href="${pageContext.request.contextPath}/developer/jqueryDev/">
+            <input type="submit" value="JqueryDev">
+        </a>
+
+    </table>
+    </body>
+</div>
 </html>

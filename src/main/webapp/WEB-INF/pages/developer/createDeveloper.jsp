@@ -11,14 +11,13 @@
 <head>
     <title>CreateDeveloper</title>
 </head>
+<button type="button" name="back" onclick="history.back()">back</button>
 <body>
 <h1>
     Enter Developer's details
 </h1>
 <form:form method="POST"
            action="/TheBestSpringProject_war_exploded/developer/addDev" modelAttribute="developer">
-
-    <button type="button" name="back" onclick="history.back()">back</button>
 
     <table>
         <tr>

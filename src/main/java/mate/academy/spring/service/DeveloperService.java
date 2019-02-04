@@ -13,4 +13,6 @@ public interface DeveloperService {
     DeveloperDto getDeveloper(Long id);
 
     List<Developer> getAll();
+
+    void delete(Long id);
 }
