@@ -44,6 +44,11 @@ public class DeveloperServiceImpl implements DeveloperService {
         return developerRepository.findAll();
     }
 
+    @Override
+    public void delete(Long id) {
+        developerRepository.deleteById(id);
+    }
+
     @PostConstruct
     public void postConstruct() {
         System.out.println("DeveloperServiceImpl is OK!");

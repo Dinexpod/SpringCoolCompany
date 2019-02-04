@@ -2,6 +2,7 @@ package mate.academy.spring.controller;
 
 import lombok.extern.log4j.Log4j;
 import mate.academy.spring.dto.DeveloperDto;
+import mate.academy.spring.dto.UserLoginInput;
 import mate.academy.spring.model.Developer;
 import mate.academy.spring.service.DeveloperService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,12 @@ public class DeveloperController {
         this.developerService = developerService;
     }
 
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index() {
+        System.out.println("controller: INDEX");
+        return "developer/index1";
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     public String developer() {
         System.out.println("controller: DEVELOPER");
@@ -37,8 +44,13 @@ public class DeveloperController {
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String developerInfo() {
-        System.out.println("controller: DEVELOPER INFO");
         return "developer/info";
+    }
+
+    @RequestMapping(value = "/delete/{developerId}", method = RequestMethod.POST)
+    public String developerDelete(@PathVariable Long developerId) {
+        developerService.delete(developerId);
+        return "redirect:/developer/listDev";
     }
 
     @RequestMapping(value = "/{developerId}", method = RequestMethod.GET)
@@ -82,9 +94,23 @@ public class DeveloperController {
     }
 
     @RequestMapping(value = "/jqueryDev", method = RequestMethod.GET)
-    public String index() {
+    public String jQueryDev() {
 
         return "developer/jqueryDev";
+    }
+
+    @RequestMapping(value = "/reg", method = RequestMethod.GET)
+    public String reg() {
+
+        return "auth/reg";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(UserLoginInput user) {
+        System.out.println("LOGIIIIIIIIIIIIIIIIIIIIN");
+        System.out.println(user.getPassword());
+        System.out.println(user.getUsername());
+        return "redirect:/developer/index";
     }
 
     @PostConstruct

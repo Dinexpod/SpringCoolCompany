@@ -11,6 +11,10 @@
 <h2>
     <table>
         <tr>
+            <td>Id:</td>
+            <td>${developer.developerId}</td>
+        </tr>
+        <tr>
             <td>Name:</td>
             <td>${developer.developerName}</td>
         </tr>
