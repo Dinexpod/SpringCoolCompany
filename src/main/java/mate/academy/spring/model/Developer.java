@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -29,9 +28,9 @@ public class Developer {
 
     @ManyToMany
     @JoinTable(name="developer_project")
-    private Set<Project> developerProjects = new HashSet<>();
+    private Set<Project> developerProjects;
 
     @ManyToMany
     @JoinTable(name="developer_skill")
-    private Set<Skill> developerSkills = new HashSet<>();
+    private Set<Skill> developerSkills;
 }

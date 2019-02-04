@@ -12,7 +12,7 @@ public interface DeveloperService {
 
     DeveloperDto getDeveloper(Long id);
 
-    List<Developer> getAll();
+    List<DeveloperDto> getAll();
 
     void delete(Long id);
 }

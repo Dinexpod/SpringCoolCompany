@@ -22,7 +22,7 @@ public class CompanyServiceImpl implements CompanyService {
         Company company = new Company();
 
         company.setCompanyName("Varteq");
-        company.setCompanyType(Company.Type.OUTSOURCE);
+        company.setCompanyType(Company.getTypeOutsource());
 
         companyRepository.save(company);
     }
@@ -30,11 +30,5 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Company getCompany(Long id) {
         return null;
-    }
-
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("CompanyServiceImpl is OK!");
-        System.out.println("=============================================");
     }
 }

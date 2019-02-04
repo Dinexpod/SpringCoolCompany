@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -30,11 +29,11 @@ public class Project {
     private LocalDateTime projectDate;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "developerProjects")
-    private Set<Developer> projectDevelopers = new HashSet<>();
+    private Set<Developer> projectDevelopers;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "companyProjects")
-    private Set<Company> projectCompanies = new HashSet<>();
+    private Set<Company> projectCompanies;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "customerProjects")
-    private Set<Customer> projectCustomers = new HashSet<>();
+    private Set<Customer> projectCustomers;
 }

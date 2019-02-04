@@ -1,5 +1,6 @@
 package mate.academy.spring.service;
 
+import lombok.extern.log4j.Log4j;
 import mate.academy.spring.dto.DeveloperDto;
 import mate.academy.spring.model.Developer;
 import mate.academy.spring.repository.DeveloperRepository;
@@ -9,7 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.stream.Collectors;
 
+@Log4j
 @Component("developerService")
 public class DeveloperServiceImpl implements DeveloperService {
 
@@ -40,18 +43,16 @@ public class DeveloperServiceImpl implements DeveloperService {
 }
 
     @Override
-    public List<Developer> getAll() {
-        return developerRepository.findAll();
+    public List<DeveloperDto> getAll() {
+        List<Developer> developers = developerRepository.findAll();
+        return developers
+                .stream()
+                .map(DeveloperDto::doDtoDev)
+                .collect(Collectors.toList());
     }
 
     @Override
     public void delete(Long id) {
         developerRepository.deleteById(id);
-    }
-
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("DeveloperServiceImpl is OK!");
-        System.out.println("=============================================");
     }
 }

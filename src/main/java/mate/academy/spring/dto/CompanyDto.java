@@ -3,7 +3,6 @@ package mate.academy.spring.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import mate.academy.spring.model.Company;
 
 @Data
 @NoArgsConstructor
@@ -11,9 +10,9 @@ import mate.academy.spring.model.Company;
 public class CompanyDto {
     private Long companyId;
     private String companyName;
-    private Company.Type companyType;
+    private Type companyType;
 
-    public enum Type {
+    private enum Type {
         OUTSOURCE,
         INSOURCE
     }

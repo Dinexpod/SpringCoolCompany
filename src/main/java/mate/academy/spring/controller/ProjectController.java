@@ -21,27 +21,11 @@ public class ProjectController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String project() {
-        System.out.println("controller: PROJECT");
-//        developerService.create();
         return "project/project";
     }
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String projectInfo() {
-        System.out.println("controller: PROJECT INFO");
         return "project/info";
-    }
-
-//    @RequestMapping(value = "/developer/{developerId}", method = RequestMethod.GET)
-//    public String getDeveloperInfo(@PathVariable Long developerId, ModelMap view) {
-//        Developer developer = developerService.getDeveloper(developerId);
-//        view.put("developer", developer);
-//        return "developer/info";
-//    }
-
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("PROJECT CONTROLLER is OK!");
-        System.out.println("=============================================");
     }
 }

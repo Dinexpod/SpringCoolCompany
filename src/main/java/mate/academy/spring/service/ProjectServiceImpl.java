@@ -32,10 +32,4 @@ public class ProjectServiceImpl implements ProjectService {
     public Project getProject(Long id) {
         return null;
     }
-
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("ProjectServiceImpl is OK!");
-        System.out.println("=============================================");
-    }
 }
