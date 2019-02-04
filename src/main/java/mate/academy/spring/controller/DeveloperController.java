@@ -1,6 +1,7 @@
 package mate.academy.spring.controller;
 
 import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import mate.academy.spring.dto.DeveloperDto;
 import mate.academy.spring.model.Developer;
 import mate.academy.spring.service.DeveloperService;
@@ -15,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.PostConstruct;
 import java.util.List;
 
-@Log4j
+@Log4j2
 @Controller
 @RequestMapping("/developer")
 public class DeveloperController {
@@ -29,7 +30,7 @@ public class DeveloperController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
-        log.info("controller: INDEX");
+        log.info("controller: DEVELOPER INDEX");
         return "developer/index1";
     }
 
@@ -41,17 +42,20 @@ public class DeveloperController {
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String developerInfo() {
+        log.info("controller: DEVELOPER INFO");
         return "developer/info";
     }
 
     @RequestMapping(value = "/delete/{developerId}", method = RequestMethod.POST)
     public String developerDelete(@PathVariable Long developerId) {
+        log.info("controller: DEVELOPER DELETE. Delete developer with id " + developerId + ".");
         developerService.delete(developerId);
         return "redirect:/developer/listDev";
     }
 
     @RequestMapping(value = "/{developerId}", method = RequestMethod.GET)
     public String getDeveloperInfo(@PathVariable Long developerId, ModelMap view) {
+        log.info("controller: DEVELOPER INFO by id");
         DeveloperDto developerDto = developerService.getDeveloper(developerId);
         view.put("developer", developerDto);
         return "developer/info";
@@ -59,11 +63,13 @@ public class DeveloperController {
 
     @RequestMapping(value = "/newDev", method = RequestMethod.GET)
     public ModelAndView newDeveloper() {
+        log.info("controller: DEVELOPER newDev");
         return new ModelAndView("developer/createDeveloper", "developer", new Developer());
     }
 
     @RequestMapping(value = "/addDev", method = RequestMethod.POST)
     public String putDeveloper(DeveloperDto devDto, ModelMap model) {
+        log.info("controller: DEVELOPER addDev");
         Developer dev = new Developer();
 
         dev.setDeveloperAge(devDto.getDeveloperAge());
@@ -89,7 +95,7 @@ public class DeveloperController {
 
     @RequestMapping(value = "/jqueryDev", method = RequestMethod.GET)
     public String jQueryDev() {
-
+        log.info("controller: DEVELOPER jqueryDev");
         return "developer/jqueryDev";
     }
 
