@@ -17,27 +17,25 @@
 
     <body>
 
-
-    <form name='form-login'>
-        <span class="fontawesome-user"></span>
-        <input type="text" id="email" placeholder="Email">
+    <form method="POST"
+          action="${pageContext.request.contextPath}/auth/login" modelattribute="userLoginInput">
 
         <span class="fontawesome-user"></span>
-        <input type="text" id="user" placeholder="Username">
+        <input name="email" type="text" id="email" placeholder="Email">
 
         <span class="fontawesome-user"></span>
-        <input type="text" id="name" placeholder="Name">
+        <input name="username" type="text" id="username" placeholder="Username">
 
         <span class="fontawesome-user"></span>
-        <input type="text" id="last name" placeholder="Last name">
+        <input name="name" type="text" id="name" placeholder="Name">
+
+        <span class="fontawesome-user"></span>
+        <input name="lastName" type="text" id="lastName" placeholder="Last name">
 
         <span class="fontawesome-lock"></span>
-        <input type="password" id="pass" placeholder="Password">
+        <input name="password" type="password" id="password" placeholder="Password">
 
-        <input type="submit" value="Authorization">
-
-
-
+        <input name="" type="submit" value="Authorization">
     </form>
 
     </body>

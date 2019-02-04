@@ -20,7 +20,7 @@
 
 
     <form method="POST"
-          action="${pageContext.request.contextPath}/developer/login" modelattribute="userLoginInput">
+          action="${pageContext.request.contextPath}/auth/login" modelattribute="userLoginInput">
 
         <span class="fontawesome-user"></span>
         <input  name="username" type="text" id="username" placeholder="Username">
@@ -31,9 +31,9 @@
         <input type="submit" value="Login">
     </form>
 
-    <a href="${pageContext.request.contextPath}/developer/reg">
+    <a href="${pageContext.request.contextPath}/auth/reg">
         <form method="GET"
-              action="${pageContext.request.contextPath}/developer/reg">
+              action="${pageContext.request.contextPath}/auth/reg">
             <input type="submit" value=" Registration ">
         </form>
     </a>
