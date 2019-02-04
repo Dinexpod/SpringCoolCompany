@@ -5,15 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -30,10 +27,18 @@ public class Company {
 
     @ManyToMany
     @JoinTable(name="company_project")
-    private Set<Project> companyProjects = new HashSet<>();
+    private Set<Project> companyProjects;
 
-    public enum Type {
+    protected enum Type {
         OUTSOURCE,
         INSOURCE
+    }
+
+    public static Type getTypeOutsource() {
+        return Type.OUTSOURCE;
+    }
+
+    public static Type getTypeInsource() {
+        return Type.INSOURCE;
     }
 }

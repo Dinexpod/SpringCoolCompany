@@ -31,10 +31,4 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer getCustomer(Long id) {
         return null;
     }
-
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("CustomerServiceImpl is OK!");
-        System.out.println("=============================================");
-    }
 }

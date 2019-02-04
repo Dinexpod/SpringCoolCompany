@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -28,5 +27,5 @@ public class Customer {
 
     @ManyToMany
     @JoinTable(name="customer_project")
-    private Set<Project> customerProjects = new HashSet<>();
+    private Set<Project> customerProjects;
 }

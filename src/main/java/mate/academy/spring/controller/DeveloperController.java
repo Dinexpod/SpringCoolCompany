@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Log4j
 @Controller
@@ -30,14 +29,13 @@ public class DeveloperController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
-        System.out.println("controller: INDEX");
+        log.info("controller: INDEX");
         return "developer/index1";
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String developer() {
-        System.out.println("controller: DEVELOPER");
-//        developerService.create();
+        log.info("controller: DEVELOPER");
         return "developer/developer";
     }
 
@@ -81,12 +79,9 @@ public class DeveloperController {
 
     @RequestMapping(value = "/listDev", method = RequestMethod.GET)
     public String listDeveloper(ModelMap model) {
-        System.out.println("controller: DEVELOPER LIST");
+        log.info("controller: DEVELOPER LIST");
 
-        List<DeveloperDto> developers = developerService.getAll()
-                .stream()
-                .map(DeveloperDto::doDtoDev)
-                .collect(Collectors.toList());
+        List<DeveloperDto> developers = developerService.getAll();
 
         model.put("developers", developers);
         return "developer/listDeveloper";
@@ -100,7 +95,6 @@ public class DeveloperController {
 
     @PostConstruct
     public void postConstruct() {
-        System.out.println("DEVELOPER CONTROLLER is OK!");
-        System.out.println("=============================================");
+        log.info("Developer controller OK!");
     }
 }

@@ -21,8 +21,8 @@ public class SkillServiceImpl implements SkillService {
     public void create() {
         Skill skill = new Skill();
 
-        skill.setSkillDegree(Skill.Degree.MIDDLE);
-        skill.setSkillName(Skill.Name.JAVA);
+        skill.setSkillDegree(Skill.getDegreeJunior());
+        skill.setSkillName(Skill.getNameJava());
 
         skillRepository.save(skill);
     }
@@ -30,11 +30,5 @@ public class SkillServiceImpl implements SkillService {
     @Override
     public Skill getSkill(Long id) {
         return null;
-    }
-
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("SkillServiceImpl is OK!");
-        System.out.println("=============================================");
     }
 }
