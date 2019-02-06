@@ -21,8 +21,7 @@
 </h1>
 <form method="POST"
       action="${pageContext.request.contextPath}/developer/addDev" modelattribute="developer">
-<%--<form:form method="POST"--%>
-           <%--action="/TheBestSpringProject_war_exploded/developer/addDev" modelAttribute="developer">--%>
+
     <span class="fontawesome-user"></span>
     <input  name="developerName" type="text" id="developerName" placeholder="developerName">
 
@@ -34,24 +33,6 @@
 
     <input type="submit" value="Submit"/>
     </form>
-    <%--<table>--%>
-        <%--<tr>--%>
-            <%--<td><form:label path="developerName">Name</form:label></td>--%>
-            <%--<td><form:input path="developerName"/></td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td><form:label path="developerAge">Age</form:label></td>--%>
-            <%--<td><form:input path="developerAge"/></td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td><form:label path="developerSalary">Salary</form:label></td>--%>
-            <%--<td><form:input path="developerSalary"/></td>--%>
-        <%--</tr>--%>
-        <%--<tr>--%>
-            <%--<td><input type="submit" value="Submit"/></td>--%>
-        <%--</tr>--%>
-    <%--</table>--%>
-<%--</form:form>--%>
 </body>
     </div>
 </html>
