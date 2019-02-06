@@ -1,6 +1,5 @@
 package mate.academy.spring.controller;
 
-import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import mate.academy.spring.dto.DeveloperDto;
 import mate.academy.spring.model.Developer;
@@ -31,7 +30,7 @@ public class DeveloperController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
         log.info("controller: DEVELOPER INDEX");
-        return "developer/index1";
+        return "/index.jsp";
     }
 
     @RequestMapping(method = RequestMethod.GET)

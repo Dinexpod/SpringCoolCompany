@@ -17,22 +17,34 @@
 <div id=login>
 
     <body>
+
     <h1>Developer page</h1>
-    <table>
+<%--It was wrong!!!--%>
+    <%--<a href="${pageContext.request.contextPath}/developer/listDev/">--%>
+    <%--<input type="submit" value="List developer">--%>
+    <%--</a>--%>
 
         <a href="${pageContext.request.contextPath}/developer/listDev/">
-            <input type="submit" value="List developer">
+            <form method="GET"
+                  action="${pageContext.request.contextPath}/developer/listDev">
+                <input type="submit" value="List developer">
+            </form>
         </a>
 
-        <a href="${pageContext.request.contextPath}/developer/newDev/">
+    <a href="${pageContext.request.contextPath}/developer/newDev/">
+        <form method="GET"
+              action="${pageContext.request.contextPath}/developer/newDev">
             <input type="submit" value="Create developer">
-        </a>
+        </form>
+    </a>
 
-        <a href="${pageContext.request.contextPath}/developer/jqueryDev/">
+    <a href="${pageContext.request.contextPath}/developer/jqueryDev/">
+        <form method="GET"
+              action="${pageContext.request.contextPath}/developer/jqueryDev">
             <input type="submit" value="JqueryDev">
-        </a>
+        </form>
+    </a>
 
-    </table>
     </body>
 </div>
 </html>

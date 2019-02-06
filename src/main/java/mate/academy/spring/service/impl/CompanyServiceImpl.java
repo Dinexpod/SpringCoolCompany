@@ -1,7 +1,8 @@
-package mate.academy.spring.service;
+package mate.academy.spring.service.impl;
 
 import mate.academy.spring.model.Company;
 import mate.academy.spring.repository.CompanyRepository;
+import mate.academy.spring.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

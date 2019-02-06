@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Dinexpod
   Date: 04.02.2019
-  Time: 15:09
+  Time: 13:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,34 +10,40 @@
 <head>
     <link type="text/css" rel="stylesheet" media="screen"
           href="${pageContext.request.contextPath}/resources/styles/style1.css"/>
-    <title>registration</title>
+<title>login</title>
 </head>
 <button type="button" name="back" onclick="history.back()">back</button>
+
 <div id="login">
 
-    <body>
+<body>
 
     <form method="POST"
           action="${pageContext.request.contextPath}/auth/login" modelattribute="userLoginInput">
 
         <span class="fontawesome-user"></span>
-        <input name="email" type="text" id="email" placeholder="Email">
-
-        <span class="fontawesome-user"></span>
-        <input name="username" type="text" id="username" placeholder="Username">
-
-        <span class="fontawesome-user"></span>
-        <input name="name" type="text" id="name" placeholder="Name">
-
-        <span class="fontawesome-user"></span>
-        <input name="lastName" type="text" id="lastName" placeholder="Last name">
+        <input  name="username" type="text" id="username" placeholder="Username">
 
         <span class="fontawesome-lock"></span>
         <input name="password" type="password" id="password" placeholder="Password">
 
-        <input name="" type="submit" value="Authorization">
+        <input type="submit" value="Login">
     </form>
 
-    </body>
+    <a href="${pageContext.request.contextPath}/auth/reg">
+        <form method="GET"
+              action="${pageContext.request.contextPath}/auth/reg">
+            <input type="submit" value=" Registration ">
+        </form>
+    </a>
+
+    <a href="${pageContext.request.contextPath}/developer">
+        <form method="GET"
+              action="${pageContext.request.contextPath}/developer">
+            <input type="submit" value=" Developer page ">
+        </form>
+    </a>
+
+</body>
 </div>
 </html>

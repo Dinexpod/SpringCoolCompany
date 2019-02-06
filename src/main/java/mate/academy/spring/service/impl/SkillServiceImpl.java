@@ -1,7 +1,8 @@
-package mate.academy.spring.service;
+package mate.academy.spring.service.impl;
 
 import mate.academy.spring.model.Skill;
 import mate.academy.spring.repository.SkillRepository;
+import mate.academy.spring.service.SkillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

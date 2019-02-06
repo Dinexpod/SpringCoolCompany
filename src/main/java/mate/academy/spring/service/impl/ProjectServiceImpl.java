@@ -1,8 +1,9 @@
-package mate.academy.spring.service;
+package mate.academy.spring.service.impl;
 
 import mate.academy.spring.model.Developer;
 import mate.academy.spring.model.Project;
 import mate.academy.spring.repository.ProjectRepository;
+import mate.academy.spring.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
