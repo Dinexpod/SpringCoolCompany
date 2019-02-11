@@ -1,24 +1,25 @@
 package mate.academy.spring.config;
 
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 
-public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
-    @Override
-    protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{
-                SecurityConfig.class, DataConfig.class
-        };
-    }
+import javax.servlet.ServletContext;
+import javax.servlet.ServletRegistration;
 
-    @Override
-    protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{
-                WebConfig.class
-        };
-    }
+public class AppInit implements WebApplicationInitializer {
 
-    @Override
-    protected String[] getServletMappings() {
-        return new String[]{"/"};
+    public void onStartup(ServletContext container) {
+
+        AnnotationConfigWebApplicationContext ctx =
+                new AnnotationConfigWebApplicationContext();
+        ctx.register(WebConfig.class);
+        ctx.setServletContext(container);
+
+        ServletRegistration.Dynamic servlet = container.addServlet(
+                "dispatcher", new DispatcherServlet(ctx));
+
+        servlet.setLoadOnStartup(1);
+        servlet.addMapping("/");
     }
 }

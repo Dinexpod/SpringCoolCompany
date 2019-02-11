@@ -5,9 +5,15 @@ import mate.academy.spring.dto.UserLoginInput;
 import mate.academy.spring.dto.UserRegistrationInput;
 import mate.academy.spring.service.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Log4j
 @Controller
@@ -23,15 +29,23 @@ public class AuthController {
 
     @RequestMapping(value = "/reg", method = RequestMethod.GET)
     public String reg() {
-        return "registration/reg";
+        return "registration/registration";
     }
 
-    @RequestMapping(value = "/log", method = RequestMethod.GET)
-    public String log() {
-        return "registration/login";
+    @GetMapping(value = "/log")
+    public String log(final Authentication authentication, final ModelMap model,
+                      final HttpServletRequest request) {
+
+        if (authentication != null) {
+            return "redirect:/index";
+        }
+
+        if (request.getParameterMap().containsKey("error"))
+            model.addAttribute("error", true);
+        return "login";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @PostMapping(value = "/login")
     public String login(UserLoginInput userLI) {
         System.out.println(userLI.getUsername());
         System.out.println(userLI.getPassword());
@@ -39,13 +53,9 @@ public class AuthController {
         return "redirect:/auth/log";
     }
 
-    @RequestMapping(value = "/auth", method = RequestMethod.POST)
+    @PostMapping(value = "/auth")
     public String auth(UserRegistrationInput userRI) {
-        System.out.println("Email - " + userRI.getEmail());
-        System.out.println("Username - " + userRI.getUsername());
-        System.out.println("Name - " + userRI.getName());
-        System.out.println("LastName - " + userRI.getLastName());
-        System.out.println("Password - " + userRI.getPassword());
+        System.out.println(userRI.toString());
         return "redirect:/auth/reg";
     }
 }

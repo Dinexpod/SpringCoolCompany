@@ -4,6 +4,7 @@ import mate.academy.spring.model.User;
 import mate.academy.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
@@ -17,81 +18,27 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
+@ComponentScan("mate.academy.spring")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserDetailsService userDetailsService;
-
     @Autowired
-    public SecurityConfig(UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
+    private UserDetailsService userDetailsService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    @Autowired
-    private UserService userService;
-
-//    void createUser() {
-//        User user = new User();
-//        user.setUsername("admin");
-//        user.setPassword(passwordEncoder().encode("admin"));
-//        userService.crete(user);
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        createUser();
-
-//        http.csrf().disable();
-
-
-//                .csrf().disable()
-//                .authorizeRequests()
-//                .antMatchers("/resources/**", "/registration").anonymous()
-//                .antMatchers("/**").authenticated()
-//                .and()
-//                .formLogin()
-//                .usernameParameter("Username")
-//                .passwordParameter("Password")
-//                .defaultSuccessUrl("/")
-//                .loginPage("/auth/log")
-//                .permitAll();
-
-
-//                .csrf().disable()
-//                .authorizeRequests()
-//                .antMatchers("/resources/**", "/registration").anonymous()
-//                .antMatchers("/**").authenticated()
-//                .and()
-//                .formLogin()
-//                .usernameParameter("username")
-//                .passwordParameter("password")
-//                .defaultSuccessUrl("/", false)
-//                .loginPage("/auth/log")
-//                .permitAll()
-//                .and()
-//                .logout().permitAll()
-////                .and().formLogin().defaultSuccessUrl("/", false);
-//        ;
-
-
-
-
-
-        http
-                .authorizeRequests()
-                .antMatchers("/resources/**", "/registration").permitAll()
-                .antMatchers("/**").authenticated()
+        http.authorizeRequests()
+                .antMatchers("/resources/**", "/registration", "/login")
+                .permitAll().anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/auth/log")
                 .permitAll()
                 .and()
-                .logout().permitAll()
-        // .and().formLogin().defaultSuccessUrl("/", false);
-        ;
+                .logout().permitAll();
     }
 
     @Autowired
