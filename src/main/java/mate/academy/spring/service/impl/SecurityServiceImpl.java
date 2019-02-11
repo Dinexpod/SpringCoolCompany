@@ -6,6 +6,7 @@ import mate.academy.spring.service.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
@@ -16,12 +17,12 @@ public class SecurityServiceImpl implements SecurityService {
 
     private final UserDetailsService userDetailsService;
 
-//    @Autowired
-//    private final AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
 
     @Autowired
     public SecurityServiceImpl(UserDetailsService userDetailsService, AuthenticationManager authenticationManager) {
         this.userDetailsService = userDetailsService;
+        this.authenticationManager = authenticationManager;
     }
 
     @Override
@@ -32,7 +33,7 @@ public class SecurityServiceImpl implements SecurityService {
                 new UsernamePasswordAuthenticationToken(userDetails, userLoginInput.getPassword(),
                         userDetails.getAuthorities());
         log.info("We AUTHORIZED!!!!!!!!!!!!!!!!!!!!!!!!");
-//        Authentication authentication = authenticationManager.
-//                authenticate(usernamePasswordAuthenticationToken);
+        Authentication authentication = authenticationManager.
+                authenticate(usernamePasswordAuthenticationToken);
     }
 }

@@ -1,49 +1,55 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Dinexpod
-  Date: 04.02.2019
-  Time: 13:06
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <link type="text/css" rel="stylesheet" media="screen"
-          href="${pageContext.request.contextPath}/resources/styles/style1.css"/>
-<title>login</title>
-</head>
-<button type="button" name="back" onclick="history.back()">back</button>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<div id="login">
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Log in with your account</title>
+
+    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
 <body>
 
-    <form method="POST"
-          action="${pageContext.request.contextPath}/auth/login" modelattribute="userLoginInput">
+<div class="container">
 
-        <span class="fontawesome-user"></span>
-        <input  name="username" type="text" id="username" placeholder="Username">
+    <form method="POST" id="userLoginInput" action="${contextPath}/auth/login" class="form-signin">
+        <h2 class="form-heading">Log in</h2>
 
-        <span class="fontawesome-lock"></span>
-        <input name="password" type="password" id="password" placeholder="Password">
+        <div class="form-group ${error != null ? 'has-error' : ''}">
+            <span>${message}</span>
+            <input name="username" type="text" class="form-control" placeholder="Username"
+                   autofocus="true"/>
+            <input name="password" type="password" class="form-control" placeholder="Password"/>
+            <span>${error}</span>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-        <input type="submit" value="Login">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+            <h4 class="text-center"><a href="${contextPath}/auth/auth">Create an account</a></h4>
+        </div>
+
     </form>
 
-    <a href="${pageContext.request.contextPath}/auth/reg">
-        <form method="GET"
-              action="${pageContext.request.contextPath}/auth/reg">
-            <input type="submit" value=" Registration ">
-        </form>
-    </a>
-
-    <a href="${pageContext.request.contextPath}/developer">
-        <form method="GET"
-              action="${pageContext.request.contextPath}/developer">
-            <input type="submit" value=" Developer page ">
-        </form>
-    </a>
-
-</body>
 </div>
+<!-- /container -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+</body>
 </html>

@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import mate.academy.spring.dto.DeveloperDto;
 import mate.academy.spring.model.Developer;
 import mate.academy.spring.service.DeveloperService;
+import mate.academy.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,6 +20,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/developer")
 public class DeveloperController {
+    ////////////////////////
+    @Autowired
+    private UserService userService;
 
     private final DeveloperService developerService;
 
@@ -30,7 +34,7 @@ public class DeveloperController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
         log.info("controller: DEVELOPER INDEX");
-        return "/index.jsp";
+        return "/index";
     }
 
     @RequestMapping(method = RequestMethod.GET)
